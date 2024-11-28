@@ -56,13 +56,25 @@
         .main {
             flex: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 2rem;
         }
 
+        /* New Header Styles */
+        .airdrop-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #e879f9, #d946ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
         /* Button Styles */
-        .claim-button {
+        .connect-button {
             background: linear-gradient(45deg, #d946ef, #e879f9);
             border: none;
             color: white;
@@ -76,7 +88,7 @@
             overflow: hidden;
         }
 
-        .claim-button::before {
+        .connect-button::before {
             content: '';
             position: absolute;
             top: 0;
@@ -92,31 +104,32 @@
             transition: left 0.5s ease;
         }
 
-        .claim-button:hover {
+        .connect-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 20px rgba(217, 70, 239, 0.4);
         }
 
-        .claim-button:hover::before {
+        .connect-button:hover::before {
             left: 100%;
         }
 
-        .claim-button:active {
+        .connect-button:active {
             transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">ZERESIS</div>
+        <div class="logo">zeresis</div>
     </header>
 
     <div class="banner">
-        WELCOME TO ZERESIS, ANON.
+        ZERESIS AIRDROP NOW LIVE
     </div>
 
     <main class="main">
-        <button class="claim-button">Claim</button>
+        <h1 class="airdrop-header">Zeresis Airdrop</h1>
+        <button class="connect-button">Connect</button>
     </main>
 </body>
 </html>
